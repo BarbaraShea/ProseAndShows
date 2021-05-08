@@ -3,22 +3,15 @@ const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    console.log("working");
-    const dbPostData = await Post.findAll({
-      include: [
-        {
-          model: Post,
-          attributes: ['category', 'title_of_work', 'contents'],
-        },
-      ],
-    });
+    const dbPostData = await Post.findAll(
+    );
 
     const homePosts = dbPostData.map((Post) =>
       Post.get({ plain: true })
     );
-    
+    console.log(homePosts)
     res.render('homepage', {
-      Post,
+      homePosts
     });
   } catch (err) {
     console.log(err);
