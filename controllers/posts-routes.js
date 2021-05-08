@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ['category', 'title_of_work'],
+          attributes: ['category', 'title_of_work', 'contents'],
         },
       ],
     });
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     );
     
     res.render('homepage', {
-      post,
+      Post,
     });
   } catch (err) {
     console.log(err);
