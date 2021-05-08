@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prose & Shows</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Prose & Shows</h1>
+            {{#if logged_in}}
+            <button id="logout">Log Out</button>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
