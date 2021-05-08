@@ -21,11 +21,9 @@ Post.init(
     },
     genre_tag: {
         type: DataTypes.STRING,
-        allowNull: false,
     },
     tag: {
         type: DataTypes.STRING,
-        allowNull: false,
     },
     contents: {
       type: DataTypes.STRING,
