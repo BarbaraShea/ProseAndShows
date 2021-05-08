@@ -3,6 +3,7 @@ const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
+    console.log("working");
     const dbPostData = await Post.findAll({
       include: [
         {
