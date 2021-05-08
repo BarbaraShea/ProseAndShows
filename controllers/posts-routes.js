@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     );
     
     res.render('homepage', {
-      post,
+      Post,
     });
   } catch (err) {
     console.log(err);
