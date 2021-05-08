@@ -3,21 +3,21 @@ const { Post } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const dbPostData = await Posts.findAll({
+    const dbPostData = await Post.findAll({
       include: [
         {
-          model: Posts,
-          attributes: ['filename', 'description'],
+          model: Post,
+          attributes: ['category', 'title_of_work'],
         },
       ],
     });
 
-    const homePosts = dbPostData.map((Posts) =>
-      Posts.get({ plain: true })
+    const homePosts = dbPostData.map((Post) =>
+      Post.get({ plain: true })
     );
     
     res.render('homepage', {
-      posts,
+      Post,
     });
   } catch (err) {
     console.log(err);
@@ -27,10 +27,10 @@ router.get('/', async (req, res) => {
 
 router.get('/Posts/:id', async (req, res) => {
   try {
-    const dbPostData = await Posts.findByPk(req.params.id, {
+    const dbPostData = await Post.findByPk(req.params.id, {
       include: [
         {
-          model: Posts,
+          model: Post,
           attributes: [
             'id',
             'category',
