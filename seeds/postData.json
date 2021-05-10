@@ -1,8 +1,31 @@
 [
     {
         "title_of_work": "Wizard of Oz",
-        "contents": "blah blah",
-        "category": "Book"
+        "contents": "The Wonderful Wizard of Oz is an American classic, and will probably astonish those who know only the movie, which took considerable liberties with the story in its adaptation. ",
+        "category": "Book",
+        "genre_tag": "Fantasy",
+        "tag": "kids"
+
+    },
+    {
+        "title_of_work": "Handmaid's Tale",
+        "contents": "Handmaid's Tale season one proved an unsettling watch thanks to its dark and dreary nature, but one that was incredibly enthralling and absolutely binge-worthy.",
+        "category": "TV Series",
+        "genre_tag": "Drama",
+        "tag": "Dystopia"
+    },
+    {
+        "title_of_work": "Lost",
+        "contents": "The suspense and story is just so brilliant and well thought out. But the best thing about this show are the characters",
+        "category": "TV Series",
+        "genre_tag": "Sci-Fi",
+        "tag": "survival"
+    },
+    {
+        "title_of_work": "Wanda Vision",
+        "contents": "Awesome! Gripping! Visually Stunning! Wandavision is a smash-hit!",
+        "category": "TV Series",
+        "genre_tag": "Sci-Fi"
     }
 
 ]
