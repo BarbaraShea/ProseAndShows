@@ -37,3 +37,16 @@ pageLoad ();
 //     { id: 10767, name: 'Talk' },
 //     { id: 10768, name: 'War & Politics' },
 //     { id: 37, name: 'Western' }
+
+// The DOM element you wish to replace with Tagify
+var input = document.querySelector('input[name=basic]');
+
+// initialize Tagify on the above input node reference
+new Tagify(input)
+
+// carousel initializer
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, options);
+  });
+
