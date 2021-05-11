@@ -1,22 +1,18 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
-router.get('/User', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const dbPostData = await User.findAll(
-      // include: [
-      //   {
-      //     attributes: ['user_name', 'email'],
-      //   },
-      // ],
     );
+    
+    res.status(200).json(dbPostData)
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/User/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const dbUserData = await User.findByPk(req.params.id, {
       include: [
@@ -35,10 +31,19 @@ router.get('/User/:id', async (req, res) => {
     const User = dbUserData.get({ plain: true });
     
     res.render('user', { User });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
 });
 
 module.exports = router;
