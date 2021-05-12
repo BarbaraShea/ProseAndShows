@@ -20,9 +20,6 @@ router.get("/", async (req, res) => {
             ...p,
             date_created: moment(p.date_created).format("M/DD/YYYY")
         }));
-
-        const theMovieResult = await TheMovieDB.get(movieQuery);
-        pageModel.movies = theMovieResult.data;
         
     } catch (error) {
         console.log(error)
