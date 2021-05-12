@@ -1,7 +1,7 @@
+
 let search = "mystery"
 const movieTvApi = `https://api.themoviedb.org/3/search/multi?api_key=d91715fa647bf01938a22226b04904e3&query=${search}&page=1`
 let poster;
-const fetch = require("node-fetch");
 let movieTvData;
 let posterArr = [];
 
@@ -30,13 +30,14 @@ function renderMovieTv(){
 
     for (var i = 0; i < 5; i++) {
         console.log(document);
-        let img = global.document.querySelector("#num" + i);
+        let img = document.querySelector("#num" + i);
         console.log(`https://image.tmdb.org/t/p/w500/${posterArr[i]}`)
         img.setAttribute("src", `https://image.tmdb.org/t/p/w500/${posterArr[i]}`)
     };
 
-    $(document).ready(function(){
-        $('.carousel').carousel();
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, options);
       });
           
 
