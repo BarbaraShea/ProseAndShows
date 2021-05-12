@@ -1,17 +1,25 @@
+
 <section>
-     <h2>Current Forum / Article</h2>
-    <div>
-      <h3>{{homePosts.title_of_work}}</h3>
-      <br />
-      <h5>{{homePosts.user_name}}</h5>
-      <h5>{{homePosts.date_created}}</h5>
-      <p>
-        {{homePosts.contents}}
-      </p>
-      <br />
-      <h6>Genre: {{homePosts.genre_tag}}</h6>
-      <h6>Tags: {{homePosts.tag}}</h6>
-    </div>
+<div>
+    <form>
+        <h2>Make a Recommendation</h2>
+        <h3><label for="category">I want to share a...</label><br></h3>
+        <input type="radio" id="book" name="category" value="book">
+        <label for="book">Book</label><br>
+        <input type="radio" id="show" name="category" value="show">
+        <label for="show">Show</label><br>
+        <input type="radio" id="movie" name="category" value="movie">
+        <label for="movie">Movie</label><br>
+        <h3><label for="title">Post Title</label><br></h3>
+        <input type="text" id="title" name="title"><br>
+        <h3><label for="contents">Tell Us About It...</label><br></h3>
+        <input type="text" id="contents" name="contents"><br>
+        <h3><label for="genre">Genre</label><br></h3>
+        <input type="text" id="genre" name="genre"><br>
+        <h3><label for="tags">Additional Tags</label><br></h3>
+        <input type="text" id="tags" name="tags"><br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
 </section>
 <section>
