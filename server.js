@@ -15,15 +15,7 @@ app.set('view engine', 'handlebars');
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-<<<<<<< HEAD
 
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-const hbs = exphbs.create({ });
-``
-=======
->>>>>>> 4639255153ead745cd1cf50ab16f8efc36c029ae
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
