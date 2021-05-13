@@ -1,6 +1,6 @@
 
-let search = "mystery"
-const movieTvApi = `https://api.themoviedb.org/3/search/multi?api_key=d91715fa647bf01938a22226b04904e3&query=${search}&page=1`
+var input = document.querySelector('input[name=basic]');
+const movieTvApi = `https://api.themoviedb.org/3/search/multi?api_key=d91715fa647bf01938a22226b04904e3&query=${input}&page=1`
 let poster;
 let movieTvData;
 let posterArr = [];
@@ -44,13 +44,11 @@ function renderMovieTv(){
 }
 
 
-// // // The DOM element you wish to replace with Tagify
-// // var input = document.querySelector('input[name=basic]');
+// // The DOM element you wish to replace with Tagify
 
-// // // initialize Tagify on the above input node reference
-// // new Tagify(input)
+// // initialize Tagify on the above input node reference
+new Tagify(input)
 
-// carousel initializer
 
 
   pageLoad ();
