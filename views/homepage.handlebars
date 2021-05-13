@@ -1,25 +1,41 @@
 <section>
-<div>
-    <form>
-        <h2>Make a Recommendation</h2>
-        <h3><label for="category">I want to share a...</label><br></h3>
-        <input type="radio" id="book" name="category" value="book">
+
+  <div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Make a Recommendation:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="category">I want to share a...</label><br>
+        <input class="form-input" type="checkbox" id="book" name="category" value="book">
         <label for="book">Book</label><br>
-        <input type="radio" id="show" name="category" value="show">
-        <label for="show">Show</label><br>
-        <input type="radio" id="movie" name="category" value="movie">
-        <label for="movie">Movie</label><br>
-        <h3><label for="title">Post Title</label><br></h3>
-        <input type="text" id="title" name="title"><br>
-        <h3><label for="contents">Tell Us About It...</label><br></h3>
-        <input type="text" id="contents" name="contents"><br>
-        <h3><label for="genre">Genre</label><br></h3>
-        <input type="text" id="genre" name="genre"><br>
-        <h3><label for="tags">Additional Tags</label><br></h3>
-        <input name='basic' value=''>
-        <input type="submit" value="Submit">
+        <input class="form-input" type="checkbox" id="show" name="category" value="show">
+        <label for="book">Show</label><br>
+        <input class="form-input" type="checkbox" id="movie" name="category" value="movie">
+        <label for="book">Movie</label><br>
+      </div>
+      <div class="form-group">
+        <label for="title">Post Title:</label>
+        <input class="form-input" type="text" id="title" name="title"/>
+      </div>
+      <div class="form-group">
+        <label for="contents">Tell Us About It...</label>
+        <textarea class="form-input" type="text"  id="contents" name="contents"></textarea>
+      </div>
+       <div class="form-group">
+        <label for="genre">Genre</label>
+        <textarea class="form-input" type="text" id="genre" name="genre"></textarea>
+      </div>
+         <div class="form-group">
+        <label for="genre">Additional Tags</label>
+        <textarea class="form-input" type="text" id="tags" name="tags"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
     </form>
-</div>
+  </div>
+
 </section>
 <aside>
     <h2>Topics / Hot Threads</h2>
@@ -37,6 +53,7 @@
 
 </div>
 </aside>
+<script src="new.js"></script>
+<script src="index.js" ></script>
 
-  <script src="index.js" ></script>
 
