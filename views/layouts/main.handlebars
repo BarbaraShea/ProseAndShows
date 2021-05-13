@@ -13,6 +13,10 @@
     <header>
         <nav>
             <h1>Prose & Shows</h1>
+            <form>
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Submit</button>
+            </form>
             {{#if logged_in}}
             <button id="logout">Log Out</button>
             {{/if}}
