@@ -106,3 +106,16 @@ h6 {
   .app-title a {
     color: var(--dark);
   }
+
+  p {
+    color: var(--tertiary);
+
+  }
+
+  .main {
+      background-color: var(--secondary);
+  }
+
+  .post {
+  
+  }
