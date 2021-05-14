@@ -45,7 +45,7 @@ h6 {
 .navbar {
     width: 100%;
     position: static;
-    background-color: var(--secondary);
+    background-color: var(--dark);
   }
   
   .nav-item {
@@ -53,7 +53,7 @@ h6 {
   }
   
   .nav-item a {
-    color: var(--light-dark);
+    color: var(--secondary);
     align-items: flex-end;
 
   }
@@ -85,7 +85,7 @@ h6 {
 
   .hero {
     padding: 3% 4%;
-    background-color: var(--dark);
+    background-color: var(--primary);
     color: var(--primary);
   }
   
@@ -95,16 +95,16 @@ h6 {
   
   .app-title {
     font-size: 3rem;
-    background-color: var(--primary);
+    background-color: var(--tertiary);
     color: var(--dark);
     padding: 0 10px;
     display: inline-block;
     border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--tertiary);
+    box-shadow: 6px 5px var(--light-dark);
   }
   
   .app-title a {
-    color: var(--dark);
+    color: var(--secondary);
   }
 
   p {
