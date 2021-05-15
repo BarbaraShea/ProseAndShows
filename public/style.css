@@ -64,6 +64,11 @@ h6 {
     align-items: flex-end;
 
   }
+  
+/* 
+  header {
+    display: flex;
+  } */
 
   h2 a:visited {
     color: var(--tertiary);
@@ -75,7 +80,6 @@ h6 {
   
   header {
     margin-top: 0px;
-    
   }
   
   main {
@@ -132,5 +136,13 @@ h6 {
     display: inline-block;
     height: 150px;
     width: 150px;
-  
+    padding-top: 20px;
   }
+
+  /* #image-div {
+    align-items: left;
+  }
+
+  #title-div {
+    display: inline-block;
+  } */
