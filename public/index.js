@@ -1,5 +1,4 @@
-
-var input = "mystery"
+var input = document.getElementById('searchTerm');
 // document.querySelector('input[name=basic]');
 const movieTvApi = `https://api.themoviedb.org/3/search/multi?api_key=d91715fa647bf01938a22226b04904e3&query=${input}&page=1`
 const bookApi = `https://www.googleapis.com/books/v1/volumes?q=subject:${input}`
@@ -7,7 +6,7 @@ let poster;
 let movieTvData;
 let posterArr = [];
 
-M.AutoInit();
+// M.AutoInit();
 
 function pageLoad (){
     console.log("working");
@@ -55,9 +54,56 @@ function renderMovieTv(){
         var instances = M.Carousel.init(elems, options);
       });
           
-
 }
 
+function renderBook(){
+    for (let i = 0; i < 5; i++) {
+        const bookImg = bookData.items[i].volumeInfo.imageLinks.thumbnail;
+        bookArr.push(bookImg);
+        console.log(bookArr);
+    };
+    for (var i = 0; i < 5; i++) {
+        let img = document.querySelector("#bookNum" + i);
+        img.setAttribute("src", `${bookArr[i]}`)
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.book-carousel');
+        var instances = M.Carousel.init(elems, options);
+      });
+}
+
+var handleSearch = function (event) {
+    event.preventDefault();
+
+    var userSearch = input.value.trim();
+
+    if (userSearch) {
+        getMovieRecommendations(userSearch);
+    } else {
+        alert('Please enter a valid search term.');
+    }
+};
+
+var getMovieRecommendations = function (search) {
+    fetch(movieTvApi)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data)
+            {
+                renderMovieTV(data, search);
+            });
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    })
+    .catch(function (error) {
+        alert('Unable to connect to connect to The Movie DB.');
+    });
+};
+
+
+
+var getPosts = function (search) {}
 
 // // The DOM element you wish to replace with Tagify
 
