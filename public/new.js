@@ -2,8 +2,21 @@
   const newFormHandler = async (event) => {
     console.log("I work!")
     event.preventDefault();
+
+    const book = document.querySelector('#book').checked;
+    const show = document.querySelector('#show').checked;
+    const movie = document.querySelector('#movie').checked;
+
+    let category;
+
+    if (book) {
+      category = 'book';
+    } else if (show) {
+      category = 'show';
+    } else if (movie) {
+      category = 'movie';
+    }
   
-    const category = document.querySelector('#category').value.trim();
     const title_of_work = document.querySelector('#title').value.trim();
     const contents = document.querySelector('#contents').value.trim();
     const genre_tag = document.querySelector('#genre').value.trim();
@@ -27,5 +40,3 @@
     }
   };
 
-  document.querySelector('.new-post-form')
-  document.addEventListener('submit', newFormHandler);
