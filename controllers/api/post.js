@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const homePosts = dbPostData.map((Post) =>
             Post.get({ plain: true })
         );
-        res.status(200).json(dbPostData)
+        res.status(200).json(homePosts)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -37,9 +37,9 @@ router.get('/:id', async (req, res) => {
             ],
         });
 
-        const Post = dbPostData.get({ plain: true });
+        const serializedpost = dbPostData.get({ plain: true });
 
-        res.render('posts', { Post });
+        res.render('posts', serializedpost);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
