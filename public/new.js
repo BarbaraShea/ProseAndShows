@@ -23,8 +23,7 @@
     const tags = document.querySelector('#tags').value.trim();
 
   
-    if (category && title_of_work  && contents) {
-      const response = await fetch(`/api/post`, {
+      const response = await fetch(`/api/post/create`, {
         method: 'POST',
         body: JSON.stringify({ category, title_of_work, contents, genre_tag, tags }),
         headers: {
@@ -37,6 +36,7 @@
       } else {
         alert('Failed to create project');
       }
-    }
   };
+
+  document.querySelector('.new-project-form').addEventListener('submit', newFormHandler);
 
