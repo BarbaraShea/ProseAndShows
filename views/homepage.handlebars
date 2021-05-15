@@ -1,54 +1,68 @@
 
-<section style="position: absolute;left: 10%;">
-<div>
-    <form>
-        <h2>Make a Recommendation</h2>
-        <h3><label for="category">I want to share a...</label><br></h3>
-        <input type="radio" id="book" name="category" value="book">
-        <label for="book">Book</label><br>
-        <input type="radio" id="show" name="category" value="show">
-        <label for="show">Show</label><br>
-        <input type="radio" id="movie" name="category" value="movie">
-        <label for="movie">Movie</label><br>
-        <h3><label for="title">Post Title</label><br></h3>
-        <input type="text" id="title" name="title"><br>
-        <h3><label for="contents">Tell Us About It...</label><br></h3>
-        <input type="text" id="contents" name="contents"><br>
-        <h3><label for="genre">Genre</label><br></h3>
-        <input type="text" id="genre" name="genre"><br>
-        <h3><label for="tags">Additional Tags</label><br></h3>
-        <input type="text" id="tags" name="tags"><br>
-        <input type="submit" value="Submit">
-    </form>
-</div>
-</section>
-<section style="position:absolute;top: 130%; left:10%">
-     <h2>Recommendation Slideshow</h2>
-  <div class="carousel"{{carousel}}>
-    <a class="carousel-item" href="#one!"><img src="" id="num0"></a>
-    <a class="carousel-item" href="#two!"><img src="" id="num1"></a>
-    <a class="carousel-item" href="#three!"><img src="" id="num2"></a>
-    <a class="carousel-item" href="#four!"><img src="" id="num3"></a>
-    <a class="carousel-item" href="#five!"><img src="" id="num4"></a>
-  </div>
-</section>
-<section class="topics" style="float: right;">
-<aside>
-    <h2>Topics / Hot Threads</h2>
+  <div class="row">
+
+
+    <div class="aside col s4">
+    <h3>User Posts</h3>
    {{#each homePosts as |post|}}
-    <div>
-      <h3>{{post.title_of_work}}</h3>
-      <br />
-      <h5>{{post.user_name}}</h5>
+    <div class="post">
+      <h4>{{post.title_of_work}}</h4> 
+      <h5>{{post.category}}</h5>
       <h5>{{post.date_created}}</h5>
-      <br/>
+      <p>{{post.contents}}</p>
       <h6>Genre: {{post.genre_tag}}</h6>
       <h6>Tags: {{post.tag}}</h6>
-        <input name='basic' value='tag1, tag2 autofocus'>
+      <br>
     </div>
    {{/each}}
+
+  </div>
+
+
+  <div class="main col s8">
+    <h2>Make a Recommendation:</h2>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="category">I want to share a...</label><br>
+        <label for="book">
+          <input class="form-input" type="checkbox" id="book" name="category" value="book">
+          <span>Book</span>
+        </label><br>
+        <label for="show">
+            <input class="form-input" type="checkbox" id="show" name="category" value="show">
+           <span>Show</span>
+        </label><br>
+        <label for="movie">
+            <input class="form-input" type="checkbox" id="movie" name="category" value="movie">
+             <span>Movie</span> 
+          </label><br>
+      </div>
+      <div class="form-group">
+        <label for="title">Post Title:</label>
+        <input class="form-input" type="text" id="title" name="title"/>
+      </div>
+      <div class="form-group">
+        <label for="contents">Tell Us About It...</label>
+        <textarea class="form-input" type="text"  id="contents" name="contents"></textarea>
+      </div>
+       <div class="form-group">
+        <label for="genre">Genre</label>
+        <textarea class="form-input" type="text" id="genre" name="genre"></textarea>
+      </div>
+         <div class="form-group">
+        <label for="genre">Additional Tags</label>
+        <textarea class="form-input" type="text" id="tags" name="tags"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
 </div>
-</aside>
-</section>
-  <script src="index.js" ></script>
+
+
+<script src="new.js"></script>
+<script src="index.js" ></script>
+
 

@@ -1,0 +1,36 @@
+<section>
+     <h2>Movie Recommendation Slideshow</h2>
+  <div class="carousel"{{carousel}}>
+    <a class="carousel-item" href="#one!"><img src="" id="num0"></a>
+    <a class="carousel-item" href="#two!"><img src="" id="num1"></a>
+    <a class="carousel-item" href="#three!"><img src="" id="num2"></a>
+    <a class="carousel-item" href="#four!"><img src="" id="num3"></a>
+    <a class="carousel-item" href="#five!"><img src="" id="num4"></a>
+  </div>
+</section>
+<section>
+     <h2>Book Recommendation Slideshow</h2>
+  <div class="carousel"{{carousel}}>
+    <a class="carousel-item" href="#one!"><img src="" id="num0"></a>
+    <a class="carousel-item" href="#two!"><img src="" id="num1"></a>
+    <a class="carousel-item" href="#three!"><img src="" id="num2"></a>
+    <a class="carousel-item" href="#four!"><img src="" id="num3"></a>
+    <a class="carousel-item" href="#five!"><img src="" id="num4"></a>
+  </div>
+</section>
+<section>
+    <h2>Relevant Posts</h2>
+   {{#each homePosts as |post|}}
+    <div>
+      <h3>{{post.title_of_work}}</h3>
+      <br />
+      <h5>{{post.user_name}}</h5>
+      <h5>{{post.date_created}}</h5>
+      <br />
+      <h6>Genre: {{post.genre_tag}}</h6>
+      <h6>Tags: {{post.tag}}</h6>
+    </div>
+   {{/each}}
+</div>
+</section>
+<script src="index.js"></script>

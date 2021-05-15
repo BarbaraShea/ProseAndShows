@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "hi!",
   "main": "server.js",
+  "engines": {
+    "node": "14.16.1"
+  }
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -25,8 +28,12 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.1",
     "express-session": "^1.17.1",
+    "install": "^0.13.0",
+    "materialize": "^1.0.0",
+    "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^2.2.5",
     "node-fetch": "^2.6.1",
+    "npm": "^7.12.1",
     "sequelize": "^6.6.2"
   },
   "devDependencies": {

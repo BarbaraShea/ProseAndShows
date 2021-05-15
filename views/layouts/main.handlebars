@@ -5,25 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" href="..\..\public\css\homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300&family=Crimson+Text&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Prose & Shows</title>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <h1>Prose & Shows</h1>
-            {{#if logged_in}}
-            <button id="logout">Log Out</button>
+<body class="flex-colum min-100-vh">
+    <nav class="navbar">
+    <ul>
+      <li class="right-align nav-item"><a href="/"><i class="fa fa-fw fa-home"></i>Home</a></li>
+      <li class="right-align nav-item"><a href="/recommendation"><i class="fa fa-fw fa-search"></i>Recommendations</a></li>
+      <li class="right-align nav-item"><a href="/login"><i class="fa fa-fw fa-user"></i>Login</a></li>
+         {{#if logged_in}}
+      <li class="li-inline nav-item"> <button id="logout">Log Out</button></li>  
             {{/if}}
-        </nav>
-    </header>
-    <main>
+    </ul>     
+    </nav>
+<header class="hero">
+     <h1 class="app-title"><a href="/">PROSE & SHOWS</h1>
+     <div class="bookimg">
+         <img  src="book.jpg">
+        <img src="film.jpg">
+        </div>
+</header>
+
+<main class="col-auto">
         {{{body}}}
     </main>
     {{#if logged_in}}
+  
     <script src="/js/logout.js"></script>
     {{/if}}
 </body>
