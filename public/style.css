@@ -16,14 +16,14 @@ body {
     background-color: var(--primary);
     margin: 0;
     padding: 0;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Girassol', cursive;
     color: var(--light-dark);
     line-height: 1.5;
     font-size: 16px;
   }
 
 h1 {
-    font-family: 'Special Elite', cursive;
+    font-family: 'Crimson Text', serif;
     font-weight: 900;
     margin: 0;
     color: var(--tertiary);
@@ -31,21 +31,28 @@ h1 {
 }
 
 h2,
-h3,
+h3{
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    margin: 0;
+    color: var(--dark);
+    line-height: 1.25;
+  }
+
 h4,
 h5,
 h6 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Poppins', sans-serif; 
   font-weight: 700;
   margin: 0;
-  color: var(--dark);
+  color: var(--light-dark);
   line-height: 1.25;
 }
 
 .navbar {
     width: 100%;
     position: static;
-    background-color: var(--secondary);
+    background-color: var(--dark);
   }
   
   .nav-item {
@@ -53,7 +60,7 @@ h6 {
   }
   
   .nav-item a {
-    color: var(--light-dark);
+    color: var(--secondary);
     align-items: flex-end;
 
   }
@@ -68,6 +75,7 @@ h6 {
   
   header {
     margin-top: 0px;
+    
   }
   
   main {
@@ -77,6 +85,8 @@ h6 {
   
   a {
     text-decoration: none;
+    font-family: 'Crimson Text', serif;
+
   }
   
   p {
@@ -85,8 +95,9 @@ h6 {
 
   .hero {
     padding: 3% 4%;
-    background-color: var(--dark);
+    background-color: var(--primary);
     color: var(--primary);
+    margin: auto;
   }
   
   .hero p {
@@ -95,20 +106,21 @@ h6 {
   
   .app-title {
     font-size: 3rem;
-    background-color: var(--primary);
+    background-color: var(--tertiary);
     color: var(--dark);
     padding: 0 10px;
     display: inline-block;
     border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--tertiary);
+    box-shadow: 6px 5px var(--light-dark);
   }
   
   .app-title a {
-    color: var(--dark);
+    color: var(--secondary);
   }
 
   p {
     color: var(--tertiary);
+    font-family: 'Poppins', sans-serif; 
 
   }
 
@@ -116,6 +128,9 @@ h6 {
       background-color: var(--secondary);
   }
 
-  .post {
+  img {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
   
   }
