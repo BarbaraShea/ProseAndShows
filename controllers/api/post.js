@@ -46,4 +46,27 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const dbPostData = await Post.create({
+            category: req.body.category,
+            title_of_work: req.body.title_of_work,
+            genre_tag: req.body.genre_tag,
+            tag: req.body.tag,
+            contents: req.body.contents,
+            date_created: req.body.date_created,
+            user_name: req.body.date_created,
+            userId: req.body.userId
+        });
+
+        req.session.save(() => {
+            res.status(200).json(dbPostData);
+        });
+    } catch (err) {
+        console.log(err);
+    
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
