@@ -6,7 +6,7 @@ let poster;
 let movieTvData;
 let posterArr = [];
 
-M.AutoInit();
+// M.AutoInit();
 
 function pageLoad (){
     console.log("working");
