@@ -1,8 +1,10 @@
 // document.querySelector('input[name=basic]');
 let movieTvData;
 let bookData;
+let postData;
 let bookArr = [];
 let posterArr = [];
+let postArr = [];
 let input;
 
 // M.AutoInit();
@@ -42,6 +44,17 @@ function apiSearch (input){
       bookData = data;
        console.log(bookData);
         renderBook();
+    });
+    const postApi = `api/post/genre_tag/${input}`
+
+    fetch(postApi)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+      postData = data;
+       console.log(postData);
+        renderPost();
     });
 
 };
@@ -86,7 +99,20 @@ function renderBook(){
       });
 }
 
-
+function renderPost(postData) {
+    if (input == Post.genre_tag) {
+        for (let i = 0; i < 5; i++) {
+            const postInfo = postData[i];
+            postArr.push(postInfo);
+            console.log(postInfo);
+        };
+        for (let i = 0; i < postArr.length; i++) {
+            document.getElementById("post-title").innerHTML=Post.title_of_work;
+            document.getElementById("date-created").innerHTML=Post.date_created;
+            document.getElementById("genre-tag").innerHTML=Post.genre_tag;
+        };
+    }
+}
 
 // var getMovieRecommendations = function (search) {
 //     fetch(movieTvApi)
@@ -104,10 +130,6 @@ function renderBook(){
 //         alert('Unable to connect to connect to The Movie DB.');
 //     });
 // };
-
-
-
-var getPosts = function (input) {}
 
 // // The DOM element you wish to replace with Tagify
 

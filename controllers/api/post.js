@@ -66,4 +66,14 @@ router.post('/create', async (req, res) => {
     }
 });
 
+router.get('/genre_tag/:id', async (req, res) => {
+    var id = req.params.id;
+
+    let posts = await Post.findAll({genre_tag: id}).exec();
+
+    res.render('genre_tag', { 
+        posts: posts
+    });
+});
+
 module.exports = router;
