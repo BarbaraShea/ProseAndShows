@@ -6,7 +6,7 @@
 </div>
 <section>
     <h2>Movie Recommendation Slideshow</h2>
-    <div class="carousel" {{carousel}}>
+    <div class="movie-carousel" {{carousel}}>
         <a class="carousel-item" href="#one!"><img src="" id="movieNum0"></a>
         <a class="carousel-item" href="#two!"><img src="" id="movieNum1"></a>
         <a class="carousel-item" href="#three!"><img src="" id="movieNum2"></a>
@@ -16,7 +16,7 @@
 </section>
 <section>
     <h2>Book Recommendation Slideshow</h2>
-    <div class="carousel" {{carousel}}>
+    <div class="book-carousel" >
         <a class="carousel-item" href="#one!"><img src="" id="bookNum0"></a>
         <a class="carousel-item" href="#two!"><img src="" id="bookNum1"></a>
         <a class="carousel-item" href="#three!"><img src="" id="bookNum2"></a>
@@ -26,10 +26,25 @@
 </section>
 <section>
     <h2>Relevant Posts</h2>
-    <div id="post-container">
+    {{#each homePosts as |post|}}
+    <div class="post">
+      <h4>{{post.title_of_work}}</h4> 
+      <h5>{{post.category}}</h5>
+      <h5>{{post.date_created}}</h5>
+      <p>{{post.contents}}</p>
+      <h6>Genre: {{post.genre_tag}}</h6>
+      <h6>Tags: {{post.tag}}</h6>
+      <br>
+    </div>
+   {{/each}}
+
+
+
+
+    {{!-- <div id="post-container">
         <h3 id="post-title"></h3>
         <h4 id="date-created"></h4>
         <h4 id="genre-tag"></h4>
-    </div>
+    </div> --}}
 </section>
 <script src="index.js"></script>
