@@ -16,9 +16,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:genre_tag', async (req, res) => {
     try {
-        const dbPostData = await Post.findByPk(req.params.id, {
+        const dbPostData = await Post.findByPk(req.params.genre_tag, {
             include: [
                 {
                     model: Post,

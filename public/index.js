@@ -1,4 +1,3 @@
-// document.querySelector('input[name=basic]');
 let movieTvData;
 let bookData;
 let postData;
@@ -14,6 +13,8 @@ var pageLoad = function(event) {
 };
 
 var handleSearch = function (event) {
+    bookArr = [];
+    posterArr = [];
     event.preventDefault();
     input = document.getElementById('searchTerm').value.trim();
     console.log("input=", input)
@@ -45,7 +46,7 @@ function apiSearch (input){
        console.log(bookData);
         renderBook();
     });
-    const postApi = `api/post/genre_tag/${input}`
+    const postApi = `api/post/${input}`
 
     fetch(postApi)
     .then(function (response) {
@@ -75,16 +76,15 @@ function renderMovieTv(){
         img.setAttribute("src", `https://image.tmdb.org/t/p/w500/${posterArr[i]}`)
     };
 
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.carousel');
-        var instances = M.Carousel.init(elems, options);
+    $(document).ready(function(){
+        $('.movie-carousel').carousel();
       });
           
 }
 
 function renderBook(){
     for (let i = 0; i < 5; i++) {
+
         const bookImg = bookData.items[i].volumeInfo.imageLinks.thumbnail;
         bookArr.push(bookImg);
         console.log(bookArr);
@@ -140,7 +140,6 @@ function renderPost(postData) {
 
   pageLoad ();
 
-//   document.querySelector('.new-post-form')
-//   document.addEventListener('submit', newFormHandler);
+
 
   
