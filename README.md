@@ -25,16 +25,16 @@ As developers:
 * Express.js
 * Handlebars.js
 * Node
-* Bootstrap / CSS
+* Materialize CSS
 * Sequelize
-* Tagify
+* Google Fonts
  
 ## Work Completed
 
 * Barbara worked on the Modules. She also handled MySQL and seeds, worked on JavaScript, and put together our presentation.
 * Taylor worked on the Controllers and setting up our routes.
 * Teisha worked on the Views, setting up our different Handlebars.js pages. She also created this READ.ME.
-* Joel worked on Deployment.
+* Joel worked on Heroku Deployment and JawsDB.
  
 ## Learnings and Issues
 
