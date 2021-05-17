@@ -9,12 +9,32 @@ router.get('/', async (req, res) => {
         const homePosts = dbPostData.map((Post) =>
             Post.get({ plain: true })
         );
+
         res.status(200).json(homePosts)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
+
+
+router.get('/', async (req, res) => {
+    try {
+        const genrePostData = await Post.findByPk(req.params.genre_tag
+            );
+        
+        const searchedPosts = genrePostData.map((Post) =>
+            Post.get({ plain: true })
+        );
+
+        res.status(200).json(searchedPosts)
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
 
 router.get('/:genre_tag', async (req, res) => {
     try {

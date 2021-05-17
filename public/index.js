@@ -5,6 +5,10 @@ let bookArr = [];
 let posterArr = [];
 let postArr = [];
 let input;
+let title;
+let genreTag;
+let dateCreated;
+let contents;
 
 // M.AutoInit();
 
@@ -15,6 +19,7 @@ var pageLoad = function(event) {
 var handleSearch = function (event) {
     bookArr = [];
     posterArr = [];
+    postArr = [];
     event.preventDefault();
     input = document.getElementById('searchTerm').value.trim();
     console.log("input=", input)
@@ -46,7 +51,7 @@ function apiSearch (input){
        console.log(bookData);
         renderBook();
     });
-    const postApi = `api/post/${input}`
+    const postApi = `/api/post`
 
     fetch(postApi)
     .then(function (response) {
@@ -99,20 +104,42 @@ function renderBook(){
       });
 }
 
-function renderPost(postData) {
-    if (input == Post.genre_tag) {
-        for (let i = 0; i < 5; i++) {
+function renderPost() {
+    for (let i = 0; i < 5; i++) {
+        if (input == postData[i].genre_tag) {
+            console.log('Yes');
             const postInfo = postData[i];
             postArr.push(postInfo);
-            console.log(postInfo);
-        };
-        for (let i = 0; i < postArr.length; i++) {
-            document.getElementById("post-title").innerHTML=Post.title_of_work;
-            document.getElementById("date-created").innerHTML=Post.date_created;
-            document.getElementById("genre-tag").innerHTML=Post.genre_tag;
-        };
-    }
+            console.log(postArr);
+        // } else {
+        //     console.log('No')
+        // }
+        // console.log(postData[i].genre_tag, input)
+    };
+
+    for (let i = 0; i < postArr.length; i++) {
+        console.log("Hi")
+        title = document.getElementById("post-title-" + i);
+        dateCreated = document.getElementById("date-created-" + i);
+        genreTag = document.getElementById("genre-tag-" + i);
+        contents = document.getElementById("contents-" + i);
+
+        title.innerHTML = postArr[i].title_of_work;
+        dateCreated.innerHTML=postArr[i].date_created;
+        contents.innerHTML=postArr[i].contents;
+        genreTag.innerHTML=postArr[i].genre_tag;
 }
+}
+}
+// function renderPost(postArr) {
+//     // if (input == postData[i].genre_tag) {
+//         console.log(input, postData[i].genre_tag)
+
+//         // };
+
+//         };
+//     // }
+// // }
 
 // var getMovieRecommendations = function (search) {
 //     fetch(movieTvApi)
@@ -142,4 +169,3 @@ function renderPost(postData) {
 
 
 
-  
