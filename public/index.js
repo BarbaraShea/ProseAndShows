@@ -7,7 +7,6 @@ let postArr = [];
 let input;
 let title;
 let genreTag;
-let dateCreated;
 let contents;
 
 // M.AutoInit();
@@ -120,12 +119,10 @@ function renderPost() {
     for (let i = 0; i < postArr.length; i++) {
         console.log("Hi")
         title = document.getElementById("post-title-" + i);
-        dateCreated = document.getElementById("date-created-" + i);
         genreTag = document.getElementById("genre-tag-" + i);
         contents = document.getElementById("contents-" + i);
 
         title.innerHTML = postArr[i].title_of_work;
-        dateCreated.innerHTML=postArr[i].date_created;
         contents.innerHTML=postArr[i].contents;
         genreTag.innerHTML=postArr[i].genre_tag;
 }
