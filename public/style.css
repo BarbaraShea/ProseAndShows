@@ -16,7 +16,7 @@ body {
     background-color: var(--primary);
     margin: 0;
     padding: 0;
-    font-family: 'Girassol', cursive;
+    font-family: 'Crimson Text', serif;
     color: var(--light-dark);
     line-height: 1.5;
     font-size: 16px;
@@ -64,7 +64,7 @@ h6 {
     align-items: flex-end;
 
   }
-  
+
 /* 
   header {
     display: flex;
